@@ -1,0 +1,276 @@
+<Manager>:
+    Menu:
+        name: 'menu'
+        id: menu
+    Menu2:
+        name: 'menu2'
+        id: menu2
+    Game:
+        name: 'game'
+        id: game
+    Curiosidades:
+        name: 'curiosidades'
+        id: curiosidades
+
+
+<Menu>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: (1024,768)
+                pos: self.pos
+                source: 'img/menu_sem_botao.png'
+        orientation:'vertical'
+        #padding: '20dp','50dp'
+        #spacing: '15dp'
+        #Widget:
+
+        Button:
+            id:tt
+            #border: 90,90,90,90
+            size_hint: 0.239, 0.130 #(largura,altura)
+            pos: 90,350
+            #center_x: root.center_x - self.width
+            #center_y: root.center_y - 100
+            background_normal: 'botoes/botao_modo_descobertas.png'
+            background_onpass: 'botoes/botao_modo_descobertas_verde.png'
+            background_down: 'botoes/botao_modo_descobertas_verde.png'
+            on_release:
+                #root.manager.transition.direction = 'left'
+                #root.manager.current = 'game'
+                root.load_imagens()
+        Button:
+            id:t
+            #border: 90,90,90,90
+            size_hint: 0.239, 0.130 #(largura,altura)
+            pos: 682,350
+            #center_x: root.center_x - self.width
+            #center_y: root.center_y - 100
+            background_normal: 'botoes/botao_modo_curiosidades.png'
+            background_onpass: 'botoes/botao_modo_curiosidades_verde.png'
+            background_down: 'botoes/botao_modo_curiosidades_verde.png'
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'menu2'
+                #root.load_imagens()
+
+
+<Menu2>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: (1024,768)
+                pos: self.pos
+                source: 'img/menu2.png'
+        orientation:'vertical'
+        padding: '20dp','50dp'
+        spacing: '15dp'
+
+
+        Button:
+            pos: 200,440
+            size_hint: 0.239, 0.130
+            background_normal: 'animais_curiosidades/onca_cinza.png'
+            background_onpass: 'animais_curiosidades/onca_verde.png'
+            background_down: 'animais_curiosidades/onca_verde.png'
+            on_release: root.manager.get_screen('curiosidades').loadAnimaisCur('onca')
+
+        Button:
+            pos: 280,200
+            size_hint: 0.239, 0.130
+            background_normal: 'botoes/lobo_cinza.png'
+            background_onpass: 'botoes/lobo_verde.png'
+            background_down: 'botoes/lobo_verde.png'
+            on_release: root.manager.get_screen('curiosidades').loadAnimaisCur('lobo')
+        Button:
+            pos: 730,210
+            size_hint: 0.239, 0.130
+            background_normal: 'botoes/tamandua_cinza.png'
+            background_onpass: 'botoes/tamandua_verde.png'
+            background_down: 'botoes/tamandua_verde.png'
+            on_release: root.manager.get_screen('curiosidades').loadAnimaisCur('tamandua')
+        Button:
+            pos: 680,460
+            size_hint: 0.239, 0.130
+            background_normal: 'botoes/ariranha_cinza.png'
+            background_onpass: 'botoes/ariranha_verde.png'
+            background_down: 'botoes/ariranha_verde.png'
+            on_release: root.manager.get_screen('curiosidades').loadAnimaisCur('ariranha')
+
+        Button:
+            size_hint: 0.239, 0.130
+            center_x: root.center_x -70
+            center_y: root.center_y - 297
+            background_normal: 'botoes/botao_voltar_branco.png'
+            background_onpass: 'botoes/botao_voltar_verde.png'
+            background_down: 'botoes/botao_voltar_verde.png'
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+                #root.voltar_menu()
+
+
+<Game>:
+    BoxLayout:
+        orientation:'vertical'
+        Image:
+            id:imagem
+            #source: 'animais/3.png'
+            #size: self.texture_size
+            allow_stretch: True
+            keep_ratio: False
+            pos: self.pos
+
+
+        #Widget:
+
+
+    GridLayout:
+        id: grid
+        #self.clear_widgets()
+        spacing:[0,0]
+        cols:5
+        rows:5
+
+        MyButton:
+            id: b1
+            #background_color: 0.45 , 0, 0 , 1
+            #on_release: root.apagar_botao()
+        MyButton:
+            id: b2
+        MyButton:
+            id: b3
+        MyButton:
+            id: b4
+        MyButton:
+            id: b5
+        MyButton:
+            id: b6
+        MyButton:
+            id: b7
+        MyButton:
+            id: b8
+        MyButton:
+            id: b9
+        MyButton:
+            id: b10
+        MyButton:
+            id: b11
+        MyButton:
+            id: b12
+        MyButton:
+            id: b13
+        MyButton:
+            id: b14
+        MyButton:
+            id: b15
+        MyButton:
+            id: b16
+        MyButton:
+            id: b17
+        MyButton:
+            id: b18
+        MyButton:
+            id: b19
+        MyButton:
+            id: b20
+        MyButton:
+            id: b21
+        MyButton:
+            id: b22
+        MyButton:
+            id: b23
+        MyButton:
+            id: b24
+        MyButton:
+            id: b25
+
+
+
+    Button:
+        size_hint: 0.239, 0.130
+        center_x: root.center_x + 323 #self.width
+        center_y: root.center_y - 297
+        background_normal: 'botoes/botao_voltar_branco.png'
+        background_onpass: 'botoes/botao_voltar_verde.png'
+        background_down: 'botoes/botao_voltar_verde.png'
+        on_release:
+            #root.manager.transition.direction = 'right'
+            #root.manager.current = 'menu'
+            root.voltar_menu()
+
+
+<Curiosidades>
+    FloatLayout:
+
+        Image:
+            id:imagem1
+            source: 'animais_curiosidades/tamandua.png'
+            size: self.texture_size
+            allow_stretch: True
+            keep_ratio: False
+            pos: self.pos
+
+
+        Button:
+            size_hint: 0.239, 0.130
+            center_x: root.center_x + 323 #self.width
+            center_y: root.center_y - 297
+            background_normal: 'botoes/botao_voltar_branco.png'
+            background_onpass: 'botoes/botao_voltar_verde.png'
+            background_down: 'botoes/botao_voltar_verde.png'
+            on_release:
+                root.manager.transition.direction = 'right'
+                #root.manager.current = 'menu'
+                root.voltar_menu()
+
+        Button:
+            id: c1
+            size_hint: 0.335, 0.185
+            pos: 551,555
+            background_normal: 'botoes/exp_vida.png'
+            background_down: 'botoes/limpo.png'
+            on_release: self.background_color = 0,0,0,0
+
+        Button:
+            id: c2
+            size_hint: 0.335, 0.185
+            pos: 78,52
+            background_normal: 'botoes/gestacao.png'
+            background_down: 'botoes/limpo.png'
+            on_release: self.background_color = 0,0,0,0
+
+        Button:
+            id: c3
+            size_hint: 0.335, 0.185
+            pos: 670,352
+            background_normal: 'botoes/peso.png'
+            background_down: 'botoes/limpo.png'
+            on_release: self.background_color = 0,0,0,0
+
+        Button:
+            id:c4
+            size_hint: 0.335, 0.185
+            pos: 41,487
+            background_normal: 'botoes/nome.png'
+            background_down: 'botoes/limpo.png'
+            on_release: self.background_color = 0,0,0,0
+
+        Button:
+            id:c5
+            size_hint: 0.335, 0.185
+            pos: 206,281
+            background_normal: 'botoes/tamanho.png'
+            background_down: 'botoes/limpo.png'
+            on_release: self.background_color = 0,0,0,0
+
+
+<MyButton@Button>:
+    id:my
+    #background_normal: 'img/botao_branco.png'
+    #background_normal:so aceita imagem
+    background_color: 0.45 , 0, 0 , 1
+    background_down: ''
+    #background_down: so aceita imagem ou ''
+    on_release: self.background_color = 0,0,0,0
+    #on_release: self.apagar_botao()
